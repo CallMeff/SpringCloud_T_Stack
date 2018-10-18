@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="eureka-client-hello">
+    <output-path>$PROJECT_DIR$/out/artifacts/eureka_client_hello</output-path>
+    <root id="root" />
+  </artifact>
+</component>
