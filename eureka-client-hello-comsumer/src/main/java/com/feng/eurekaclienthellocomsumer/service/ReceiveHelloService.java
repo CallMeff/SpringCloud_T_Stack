@@ -22,16 +22,13 @@ public class ReceiveHelloService {
     private RestTemplate restTemplate;
 
     @HystrixCommand(fallbackMethod="fallback")
-    public List<String> queryHelloList() {
-        List<String> resultList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            String result = restTemplate.getForObject("http://eureka-client-hello/hello",String.class);
-            resultList.add(result);
-        }
-        return resultList;
+    public String queryHelloList(String s) {
+        //调用eureka-client-hello服务
+        String result = restTemplate.getForObject("http://eureka-client-hello/hello",String.class);
+        return result;
     }
 
-    private List<String> fallback(){
-        return new ArrayList<>();
+    private String fallback(String s){
+        return "";
     }
 }

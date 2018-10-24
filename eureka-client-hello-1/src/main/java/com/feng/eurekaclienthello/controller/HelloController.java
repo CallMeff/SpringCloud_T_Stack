@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 /**
  * @desc：打招呼
  * @title：HelloController
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/hello")
-    public String sayHello(){
-        return "this is hello-1:hello";
+    public String sayHello() throws InterruptedException {
+        long sleepTime = new Random().nextInt(3000);
+        Thread.sleep(sleepTime);
+        return "this is hello-1:hello；"+sleepTime;
     }
 }

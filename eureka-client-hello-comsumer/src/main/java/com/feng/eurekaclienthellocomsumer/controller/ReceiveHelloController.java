@@ -23,8 +23,9 @@ public class ReceiveHelloController {
     private ReceiveHelloService receiveHelloService;
 
     @GetMapping("/receive/hello")
-    public List<String> receiveHello(){
-        List<String> resultList = receiveHelloService.queryHelloList();
-        return resultList;
+    public String receiveHello(){
+        String s  = "";
+        String resultStr = receiveHelloService.queryHelloList(s);
+        return resultStr;
     }
 }
