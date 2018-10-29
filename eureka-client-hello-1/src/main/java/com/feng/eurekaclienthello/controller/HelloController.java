@@ -17,7 +17,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello() throws InterruptedException {
-        long sleepTime = new Random().nextInt(3000);
+        long sleepTime = new Random().nextInt(1000);
         Thread.sleep(sleepTime);
         return "this is hello-1:hello；"+sleepTime;
     }
